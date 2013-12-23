@@ -3,11 +3,12 @@ myApp = angular.module('myApp', ['ngRoute']);
 myApp.config(function($routeProvider, $locationProvider){
   $routeProvider.when( '/portfolio', {
     templateUrl: '../assets/angular_templates/portfolio.html',
-    controller: '../assets/controllers/PortfolioCtrl'
+    controller: 'PortfolioCtrl'
   }),
-  $routeProvider.when( '/portfolio', {
-    templateUrl: '../assets/angular_templates/portfolio.html',
-    controller: '../assets/controllers/PortfolioCtrl'
+
+  $routeProvider.when( '/blog', {
+    templateUrl: '../assets/angular_templates/blog.html',
+    controller: 'BlogCtrl'
   }),
 
   $routeProvider.otherwise({
