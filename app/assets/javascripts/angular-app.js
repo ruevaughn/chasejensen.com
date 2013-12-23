@@ -13,3 +13,5 @@
 //= require angular
 //= require angular-animate
 //= require angular-route
+//= require angular/modules/myapp
+//= require_tree ./angular/

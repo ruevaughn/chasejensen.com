@@ -38,9 +38,10 @@ gem 'rspec'
 gem 'rspec-rails'
 gem 'factory_girl_rails'
 gem 'database_cleaner'
+gem 'bootstrap-sass'
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
+gem 'bcrypt-ruby', '~> 3.1.2'
 
 # Use unicorn as the app server
 # gem 'unicorn'

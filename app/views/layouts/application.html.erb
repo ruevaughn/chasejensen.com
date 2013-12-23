@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="myApp">
 <head>
   <title>Chasejensen</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "angular", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "angular-app", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+  <%= render 'layouts/header' %>
 <%= yield %>
 
 </body>

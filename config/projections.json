@@ -1,0 +1,5 @@
+{
+  "app/assets/javascripts/angular/*.js": {
+    "command": "angular"
+  }
+}
