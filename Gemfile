@@ -17,12 +17,17 @@ group :default do
 end
   
 group :test do
+  gem 'capybara', '~> 2.2.0'
+  gem 'shoulda-matchers', '~> 2.4.0'
+  gem 'faker', '~> 1.2.0'
+  gem 'database_cleaner', '~> 1.2.0'
 end
 
 group :development do
 end
 
 group :test, :development do
+  gem 'pry-rails', '~> 0.3.2'
   gem 'factory_girl_rails', '~> 4.3.0'
   gem 'database_cleaner', '~> 1.2.0'
   gem 'rspec', '~> 2.14.1'
