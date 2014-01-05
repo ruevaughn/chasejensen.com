@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   get '/blog' => 'static#blog', as: 'blog'
 
   resource :searches, controller: 'search', only: [:create]
-  resources :articles, only: [:show]
+  resources :articles
 end
