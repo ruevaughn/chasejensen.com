@@ -4,24 +4,26 @@
     <div class='row'>
       <div class='col-xs-8'>
         <div class='form-group'>
-          <label for='title' class='sr-only'>Title</label>
-          <input type='text' class='form-control input-lg' id='article-title' placeholder='Title'>
+          <label for='article-title' class='sr-only'>Title</label>
+          <input type='text' ng-model='article.title' class='form-control input-lg' id='article-title' placeholder='Title'>
         </div>
       </div>
     </div>
 
     <div class='form-group'>
-      <label for='body' class='sr-only'>Article Body</label>
-      <textarea class='form-control' rows='9' id='article-body' placeholder='Article'></textarea>
+      <label for='article-body' class='sr-only'>Article Body</label>
+      <textarea ng-model='article.body' class='form-control' rows='9'  placeholder='Article'></textarea>
     </div>
 
     <div class='form-group'>
-      <label for='published_at'>Published At</label>
-      <input type='datetime-local' class='form-control datepicker' data-provide='datepicker'>
+      <label for='published-at'>Published At</label>
+      <input ng-model='article.publishedAt' type='datetime-local' class='form-control'>
     </div>
 
-    Tags
-    <p ng-repeat='mytag in article.tags'> {{ mytag }}</p>
+    <span>
+      <h3>Tags</h3>
+      <strong ng-repeat='tag in article.tags'> {{ tag }}</strong>
+    </span>
     <div class='row'>
       <div class='col-xs-2'>
         <div class='form-group'>
@@ -32,8 +34,9 @@
         </div>
       </div>
     </div>
-
-    <button type='submit' class='btn btn-info'>Submit</button>
-
+    <div class='form-group'>
+      <button type='submit' class='btn btn-info'>Submit</button>
+    </div>
   </form>
+
 </div>
