@@ -17,6 +17,17 @@
           <li><a href="/portfolio">Portfolio</a></li>
           <li><a href="/blog">Blog</a></li>
         </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <% if @search %>
+              <%= simple_form_for @search do |f| %>
+                <%= f.input :query, input_html: {class: 'form-control'}, label: false %>
+                <%= f.button :submit, "Search" %>
+              <% end %>
+            <% end %>
+          </li>
+
+        </ul>
       </div>
     </div>
   </nav>
