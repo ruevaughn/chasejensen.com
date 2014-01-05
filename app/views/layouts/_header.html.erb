@@ -20,8 +20,8 @@
         <ul class="nav navbar-nav navbar-right">
           <li>
             <% if @search %>
-              <%= simple_form_for @search do |f| %>
-                <%= f.input :query, input_html: {class: 'form-control'}, label: false %>
+              <%= simple_form_for @search, html: { class: 'form-inline' } do |f| %>
+                <%= f.input :query, input_html: {class: 'form-control'}, label_html: { class: 'sr-only' } %>
                 <%= f.button :submit, "Search" %>
               <% end %>
             <% end %>
