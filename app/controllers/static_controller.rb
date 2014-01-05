@@ -7,5 +7,6 @@ class StaticController < ApplicationController
 
   def blog
     @search = Search.new
+    @blog_posts = Article.all
   end
 end
