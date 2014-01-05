@@ -1,38 +1,42 @@
-<h3> Post a new article </h3>
-<form role='form'>
+<div ng-controller='ArticleNewCtrl'>
+  <h3> Post a new article </h3>
+  <form role='form'>
 
-  <div class='row'>
-    <div class='col-xs-8'>
-      <div class='form-group'>
-        <label for='title' class='sr-only'>Title</label>
-        <input type='text' class='form-control input-lg' id='article-title' placeholder='Title'>
+    <div class='row'>
+      <div class='col-xs-8'>
+        <div class='form-group'>
+          <label for='title' class='sr-only'>Title</label>
+          <input type='text' class='form-control input-lg' id='article-title' placeholder='Title'>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class='form-group'>
-    <label for='body' class='sr-only'>Article Body</label>
-    <textarea class='form-control' rows='9' id='article-body' placeholder='Article'></textarea>
-  </div>
+    <div class='form-group'>
+      <label for='body' class='sr-only'>Article Body</label>
+      <textarea class='form-control' rows='9' id='article-body' placeholder='Article'></textarea>
+    </div>
 
-  <div class='form-group'>
-    <label for='published_at'>Published At</label>
-    <input type='datetime-local' class='form-control'>
-  </div>
+    <div class='form-group'>
+      <label for='published_at'>Published At</label>
+      <input type='datetime-local' class='form-control datepicker' data-provide='datepicker'>
+    </div>
 
-  <div class='row'>
-    <div class='col-xs-1'>
-      <div class='form-group'>
-        <label for='tags'>Tags</label>
-        <button type='button' class='btn btn-default btn-sm'>
-          Add a Tag
-          <span class="glyphicon glyphicon-plus"></span>
-        </button>
-        <input type='text' class='form-control hidden'>
+    <input data-provide="datepicker">
+
+    <div class='row'>
+      <div class='col-xs-1'>
+        <div class='form-group'>
+          <label for='tags'>Tags</label>
+          <button type='button' class='btn btn-default btn-sm'>
+            Add a Tag
+            <span class="glyphicon glyphicon-plus"></span>
+          </button>
+          <input type='text' class='form-control hidden'>
+        </div>
       </div>
     </div>
-  </div>
 
-  <button type='submit' class='btn btn-info'>Submit</button>
+    <button type='submit' class='btn btn-info'>Submit</button>
 
-</form>
+  </form>
+</div>
