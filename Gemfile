@@ -13,6 +13,7 @@ group :default do
   gem 'coderay', '~> 1.1.0' 
   gem 'coffee-rails', '~> 4.0.0'
   gem 'jquery-rails', '~> 3.0.4'
+  gem 'redcarpet', '~> 3.0.0'
   gem 'sass-rails', '~> 4.0.0.rc1'
   gem 'simple_form', '~> 3.0.1'
   gem 'turbolinks', '~> 2.1.0'
