@@ -11,18 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140104233021) do
+ActiveRecord::Schema.define(version: 20140105054018) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "blog_posts", force: true do |t|
+  create_table "articles", force: true do |t|
     t.string   "title"
+    t.string   "slug"
     t.text     "body"
-    t.datetime "published_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "articles", ["slug"], name: "index_articles_on_slug", using: :btree
 
   create_table "searches", force: true do |t|
     t.string   "query"
