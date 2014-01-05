@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 group :default do
+  gem 'acts-as-taggable-on', '~> 3.0.0'
   gem 'bcrypt-ruby', '~> 3.1.2'
   gem 'friendly_id', '~> 4.0.10'
   gem 'pg', '~> 0.17.1'
