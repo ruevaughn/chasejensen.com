@@ -10,9 +10,8 @@
 </head>
 <body>
   <%= render 'layouts/header' %>
-  <div id="main" "<%= action_name %>" ng-controller="<%= action_name.capitalize %>Ctrl" class="container">
-      <%= yield %>
-    </div>
+    <div id="main" class="container">
+    <%= yield %>
   </div>
 </body>
 </html>
