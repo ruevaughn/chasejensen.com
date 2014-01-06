@@ -16,6 +16,10 @@
     </div>
 
     <div class='form-group'>
+      <button ng-click='showPreview(article.body, article.title)' class='btn btn-default btn-sm'>Preview</button>
+    </div>
+
+    <div class='form-group'>
       <label for='published-at'>Published At</label>
       <input ng-model='article.publishedAt' type='datetime-local' class='form-control'>
     </div>
@@ -38,5 +42,12 @@
       <button type='submit' class='btn btn-info'>Submit</button>
     </div>
   </form>
+  <table class='table'>
+    <tr class='active'>
+      <h1 ng-bind-html="preview.title"></h1>
+      <td ng-bind-html="preview.body"></td>
+  </table>
 
 </div>
+
+
