@@ -11,6 +11,8 @@
 // about supported directives.
 //
 //= require angular
+//= require angular-resource
+//= require angular-sanitize
 //= require angular-animate
 //= require angular-route
 //= require angular/modules/myapp
