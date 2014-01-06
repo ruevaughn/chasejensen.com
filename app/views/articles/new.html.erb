@@ -1,5 +1,7 @@
+<h3> Post New Article </h3>
 <div ng-controller='ArticleNewCtrl'>
-  <h3> Post a new article </h3>
+  {{ article.publishedAt | date:'mediumDate' }} | <a>Change</a>
+
   <ng-form='ArticleNew' role='form'>
     <div class='row'>
       <div class='col-xs-8'>
@@ -15,39 +17,33 @@
       <textarea ng-model='article.body' class='form-control' rows='9'  placeholder='Article'></textarea>
     </div>
 
-    <div class='form-group'>
-      <button ng-click='showPreview(article.body, article.title)' class='btn btn-default btn-sm'>Preview</button>
-    </div>
+    <strong ng-repeat='tag in article.tags'> {{ tag }}</strong>
 
-    <div class='form-group'>
-      <label for='published-at'>Published At</label>
-      <input ng-model='article.publishedAt' type='datetime-local' class='form-control'>
-    </div>
-
-    <span>
-      <h3>Tags</h3>
-      <strong ng-repeat='tag in article.tags'> {{ tag }}</strong>
-    </span>
-    <div class='row'>
-      <div class='col-xs-2'>
-        <div class='form-group'>
-          <input class='form-control' ng-model='articleTag'>
-          <button type='button' ng-click='addTag(articleTag)' class='btn btn-default btn-sm' >
-            <span class="glyphicon glyphicon-plus"></span>
-          </button>
-        </div>
+    <ng-form='TagNew' role='form' class='form-inline'>
+      <div class='form-group'>
+        <input class='form-control' ng-model='articleTag' placeholder='Add a Tag'>
       </div>
-    </div>
-    <div class='form-group'>
-      <button type='submit' class='btn btn-info'>Submit</button>
-    </div>
-  </form>
-  <table class='table'>
-    <tr class='active'>
-      <h1 ng-bind-html="preview.title"></h1>
-      <td ng-bind-html="preview.body"></td>
-  </table>
+      <div class='form-group'>
+        <button type='button' ng-click='addTag(articleTag)' class='btn btn-default btn-sm' >
+          <a>create</a>
+        </button>
+      </div>
+      </ng-form>
+    <div class='form-group pull-right'>
 
+      <button ng-show='preview' ng-click='preview = nil' class='btn btn-default btn-warning'>Clear</button>
+      <button ng-click='showPreview(article.body, article.title)' class='btn btn-default'>Preview</button>
+      <button type='submit' class='btn btn-info'>Create</button>
+    </div>
+
+    <table ng-show='preview' class='table'>
+      <tr class='active'>
+        <h1 ng-bind-html="preview.title"></h1>
+        <td ng-bind-html="preview.body"></td>
+      </tr>
+    </table>
+
+  </ng-form>
 </div>
 
 

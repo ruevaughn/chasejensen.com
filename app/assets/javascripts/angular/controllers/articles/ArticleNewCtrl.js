@@ -1,5 +1,8 @@
-myApp.controller('ArticleNewCtrl', ['$scope','$resource', 'Articles', function($scope, $resource, Articles) {
-  $scope.article = { tags: [] };
+myApp.controller('ArticleNewCtrl', ['$scope','$window', '$location', '$resource', 'Articles', function($scope, $window, $location, $resource, Articles) {
+  $scope.article = {
+    publishedAt: new Date(),
+    tags: []
+  };
   $scope.showPreview = function(articleBody, articleTitle){
      $resource('/api/generate/preview').get({body: articleBody}, function(resource){
        $scope.preview = {}
