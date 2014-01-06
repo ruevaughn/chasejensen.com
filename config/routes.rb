@@ -6,4 +6,8 @@ Rails.application.routes.draw do
 
   resource :searches, controller: 'search', only: [:create]
   resources :articles
+
+  namespace :api, defaults: { format: 'json' } do
+    get 'generate/preview', to: 'generator#preview'
+  end
 end
