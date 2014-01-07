@@ -1,7 +1,7 @@
-<h3> Post New Article </h3>
-<div ng-controller='ArticleNewCtrl'>
-  {{ article.publishedAt | date:'mediumDate' }} | <a>Change</a>
+<%= % coderay_stylesheet %>
 
+<h3>Article<small> Post New Article </small> </h3>
+<div ng-controller='ArticleNewCtrl'>
   <ng-form='ArticleNew' role='form'>
     <div class='row'>
       <div class='col-xs-8'>
@@ -33,15 +33,15 @@
 
       <button ng-show='preview' ng-click='preview = nil' class='btn btn-default btn-warning'>Clear</button>
       <button ng-click='showPreview(article.body, article.title)' class='btn btn-default'>Preview</button>
-      <button type='submit' class='btn btn-info'>Create</button>
+      <button ng-click='createArticle(article)' type='submit' class='btn btn-info'>Create</button>
     </div>
 
-    <table ng-show='preview' class='table'>
-      <tr class='active'>
+    <div ng-show='preview' class='panel panel-default'>
         <h1 ng-bind-html="preview.title"></h1>
+      <div class='panel-body'>
         <td ng-bind-html="preview.body"></td>
-      </tr>
-    </table>
+      </div>
+    </div>
 
   </ng-form>
 </div>
