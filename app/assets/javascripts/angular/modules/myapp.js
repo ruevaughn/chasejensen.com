@@ -1,1 +1,1 @@
-myApp = angular.module('myApp', ['ngSanitize', 'ngResource']);
+myApp = angular.module('myApp', ['ngSanitize', 'ngResource', 'restangular']);

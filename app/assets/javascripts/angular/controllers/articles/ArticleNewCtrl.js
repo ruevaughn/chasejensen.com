@@ -14,7 +14,10 @@ myApp.controller('ArticleNewCtrl', ['$scope', '$resource', 'Articles', function(
     $scope.article.tags.push(articleTag);
   }
 
-  $scope.createArticle = function(article){
-    // Articles.create({article: article})
+  $scope.createArticle = function(form){
+    articles = Restangular.all('api/articles');
+    article = {title: form.title, body: form.body}
+    articles.post({article: article})
+
   }
 }]);

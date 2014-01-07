@@ -15,5 +15,6 @@
 //= require angular-sanitize
 //= require angular-animate
 //= require angular-route
+//= require restangular
 //= require angular/modules/myapp
 //= require_tree ./angular/
