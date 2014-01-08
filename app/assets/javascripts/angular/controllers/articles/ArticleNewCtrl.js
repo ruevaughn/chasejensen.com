@@ -17,7 +17,9 @@ myApp.controller('ArticleNewCtrl', ['$scope', '$resource', 'Restangular', functi
   $scope.createArticle = function(form){
     articles = Restangular.all('api/articles');
     article = {title: form.title, body: form.body}
-    articles.post({article: article})
+    articles.post({article: article}).then(function(resource){
+      $scope.article = {}
+    })
 
   }
 }]);
