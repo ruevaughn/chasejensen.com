@@ -1,4 +1,4 @@
-myApp.controller('ArticleNewCtrl', ['$scope', '$resource', function($scope, $resource) {
+myApp.controller('ArticleNewCtrl', ['$scope', '$resource', 'Restangular', function($scope, $resource, Restangular) {
   $scope.article = {
     publishedAt: new Date(),
     tags: []
