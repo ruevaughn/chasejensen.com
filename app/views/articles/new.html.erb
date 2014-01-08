@@ -1,20 +1,17 @@
-<%= % coderay_stylesheet %>
-
-<h3>Article<small> Post New Article </small> </h3>
+<h3>Article<small> Post New Article </small></h3>
 <div ng-controller='ArticleNewCtrl'>
-  <ng-form='ArticleNew' role='form'>
+  <ng-form ng-submit='createArticle' name='article_form' novalidate>
     <div class='row'>
       <div class='col-xs-8'>
         <div class='form-group'>
           <label for='article-title' class='sr-only'>Title</label>
-          <input type='text' ng-model='article.title' class='form-control input-lg' id='article-title' placeholder='Title'>
+          <input type='text' ng-model='article.title' class='form-control input-lg' name='title' placeholder='Title' required> </input>
         </div>
       </div>
     </div>
-
     <div class='form-group'>
       <label for='article-body' class='sr-only'>Article Body</label>
-      <textarea ng-model='article.body' class='form-control' rows='9'  placeholder='Article'></textarea>
+      <textarea ng-model='article.body' class='form-control' rows='9' name='body' placeholder='Article' ng-minlength='1' required></textarea>
     </div>
 
     <strong ng-repeat='tag in article.tags'> {{ tag }}</strong>
@@ -33,13 +30,13 @@
 
       <button ng-show='preview' ng-click='preview = nil' class='btn btn-default btn-warning'>Clear</button>
       <button ng-click='showPreview(article.body, article.title)' class='btn btn-default'>Preview</button>
-      <button ng-click='createArticle(article)' type='submit' class='btn btn-info'>Create</button>
+      <button ng-click='createArticle(article)' ng-disabled='article_form.$invalid' type='submit' class='btn btn-info'>Create</button>
     </div>
 
     <div ng-show='preview' class='panel panel-default'>
         <h1 ng-bind-html="preview.title"></h1>
       <div class='panel-body'>
-        <td ng-bind-html="preview.body"></td>
+        <p ng-bind-html="preview.body"></p>
       </div>
     </div>
 
