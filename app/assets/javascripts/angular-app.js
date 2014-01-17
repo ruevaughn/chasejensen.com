@@ -16,5 +16,6 @@
 //= require angular-animate
 //= require angular-route
 //= require restangular
+//= require ui-bootstrap-0.9.0-tpls
 //= require angular/modules/myapp
 //= require_tree ./angular/
