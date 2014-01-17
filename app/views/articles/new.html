@@ -1,0 +1,72 @@
+<h3>Article<small> Post New Article </small></h3>
+<div ng-controller='ArticleNewCtrl'>
+  <form ng-submit='createArticle' name='article_form' novalidate>
+    <div class="row">
+      <div class="col-xs-6">
+        <p class="input-group">
+          <input type="text"
+            class="form-control"
+            datepicker-popup="{{format}}"
+            ng-model="article.publishedAt"
+            is-open="opened"
+            close-text="Close" />
+
+          <span class="input-group-btn">
+            <button class="btn btn-default" ng-click="open($event)">
+              <i class="glyphicon glyphicon-calendar"></i>
+            </button>
+          </span>
+        </p>
+        <strong>Date {{ article.publishedAt | date:'fullDate'}}</strong> <button class='label label-success'>Change</button>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='col-xs-8'>
+        <div class='form-group'>
+          <label for='article-title' class='sr-only'>Title</label>
+          <input type='text' ng-model='article.title' class='form-control input-lg' name='title' placeholder='Title' required> </input>
+        </div>
+      </div>
+    </div>
+    <div class='form-group'>
+      <label for='article-body' class='sr-only'>Article Body</label>
+      <textarea ng-model='article.body' class='form-control' rows='9' name='body' placeholder='Article' ng-minlength='1' required></textarea>
+    </div>
+
+    <ng-form='TagNew' role='form' name='tag_form' class='form-inline' novalidate>
+      <div class='form-group'>
+        <input class='form-control' ng-model='articleTag' placeholder='Add a Tag'>
+      </div>
+      <div class='form-group'>
+        <button type='button' ng-click='addTag(articleTag)' class='btn btn-default btn-sm' >
+          <a>create</a>
+        </button>
+      </div>
+      </ng-form>
+
+
+      <h3>
+        <button class='label label-success' ng-repeat='tag in article.tags'>
+          <span>{{ tag }}</span>
+          <a class='close' ng-click='removeTag($index)'>&times;</a>
+        </button>
+      </h3>
+
+    <div class='form-group pull-right'>
+
+      <button ng-show='preview' ng-click='preview = nil' class='btn btn-default btn-warning'>Clear</button>
+      <button ng-click='showPreview(article.body, article.title)' class='btn btn-default'>Preview</button>
+      <button ng-click='createArticle(article)' ng-disabled='article_form.$invalid' type='submit' class='btn btn-info'>Create</button>
+    </div>
+
+    <div ng-show='preview' class='panel panel-default'>
+        <h1 ng-bind-html="preview.title"></h1>
+      <div class='panel-body'>
+        <p ng-bind-html="preview.body"></p>
+      </div>
+    </div>
+
+  </form>
+</div>
+
+
