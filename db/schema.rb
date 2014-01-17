@@ -20,7 +20,8 @@ ActiveRecord::Schema.define(version: 20140105174206) do
     t.string   "title"
     t.string   "slug"
     t.text     "body"
-    t.datetime "published_at"
+    t.boolean  "published"
+    t.date     "published_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
