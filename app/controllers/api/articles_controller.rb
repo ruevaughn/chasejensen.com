@@ -8,9 +8,13 @@ class Api::ArticlesController < Api::ApplicationController
 
   def create
     articleParams = params.require(:article).permit(:title, :body)
+    tagParams = params.permit(tags: [])
+
     article = Article.new(articleParams)
+    article.tag_list.add(tagParams[:tags])
+
     if article.save
-      render json: { success: 200 }
+      render json: { id: article.id }
     else
       render json: { error: 500 }
     end

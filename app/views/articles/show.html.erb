@@ -1,0 +1,7 @@
+<h1> <%= @article.title %> </h1>
+Body: <%= markdown @article.body %>
+<p>
+<% @article.tags.each do |tag| %>
+  <%= button_tag tag, class: 'label label-warning' %>
+<% end %>
+
