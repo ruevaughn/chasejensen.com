@@ -8,6 +8,7 @@
             class="form-control"
             datepicker-popup="{{format}}"
             ng-model="article.publishedAt"
+            ng-disabled="true"
             is-open="opened"
             close-text="Close" />
 
@@ -17,7 +18,6 @@
             </button>
           </span>
         </p>
-        <strong>Date {{ article.publishedAt | date:'fullDate'}}</strong> <button class='label label-success'>Change</button>
       </div>
     </div>
     <div class='row'>

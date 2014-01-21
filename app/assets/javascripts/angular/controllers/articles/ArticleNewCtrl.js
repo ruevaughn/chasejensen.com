@@ -12,7 +12,8 @@ myApp.controller('ArticleNewCtrl', ['$scope', '$resource', 'Restangular', functi
   $scope.open = function($event){
     $event.preventDefault();
     $event.stopPropagation();
-    $scope.opened = true;
+    $scope.opened = !$scope.opened
+
   };
 
   $scope.dateOptions = {
