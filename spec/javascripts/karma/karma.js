@@ -18,7 +18,7 @@ module.exports = function(config) {
       'vendor/assets/javascripts/angular-mocks.js',
       'app/assets/javascripts/angular/modules/*.js',
       'app/assets/javascripts/angular/**/*.js',
-      'spec/javascripts/*_spec.js'
+      'spec/javascripts/unit/*Spec.js'
     ],
 
 
