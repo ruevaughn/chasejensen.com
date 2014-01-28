@@ -1,0 +1,2 @@
+
+beforeEach( module('myApp') );
