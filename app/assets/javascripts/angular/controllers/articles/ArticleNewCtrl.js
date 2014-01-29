@@ -12,7 +12,7 @@ myApp.controller('ArticleNewCtrl', ['$scope', '$resource', 'Restangular', functi
   $scope.open = function($event){
     $event.preventDefault();
     $event.stopPropagation();
-    $scope.opened = !$scope.opened
+    $scope.opened = !$scope.opened;
 
   };
 
@@ -28,11 +28,6 @@ myApp.controller('ArticleNewCtrl', ['$scope', '$resource', 'Restangular', functi
   $scope.toggleWeeks = function() {
     $scope.showWeeks = ! $scope.showWeeks;
   };
-
-
-
-
-
 
   $scope.showPreview = function(articleBody, articleTitle){
      $resource('/api/generate/preview').get({body: articleBody}, function(resource){

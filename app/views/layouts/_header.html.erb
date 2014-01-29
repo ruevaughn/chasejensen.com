@@ -17,17 +17,17 @@
           <li><a href="/portfolio">Portfolio</a></li>
           <li><a href="/blog">Blog</a></li>
         </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li>
-            <% if @search %>
-              <%= simple_form_for @search, html: { class: 'form-inline' } do |f| %>
-                <%= f.input :query, input_html: {class: 'form-control'}, label_html: { class: 'sr-only' } %>
-                <%= f.button :submit, "Search" %>
-              <% end %>
-            <% end %>
-          </li>
+        <!-- <ul class="nav navbar&#45;nav navbar&#45;right"> -->
+        <!--   <li> -->
+        <!--     <% if @search %> -->
+        <!--       <%= simple_form_for @search, html: { class: 'form&#45;inline' } do |f| %> -->
+        <!--         <%= f.input :query, input_html: {class: 'form&#45;control'}, label_html: { class: 'sr&#45;only' } %> -->
+        <!--         <%= f.button :submit, "Search" %> -->
+        <!--       <% end %> -->
+        <!--     <% end %> -->
+        <!--   </li> -->
 
-        </ul>
+        <!-- </ul> -->
       </div>
     </div>
   </nav>

@@ -14,3 +14,7 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require lodash
+//= require ./angular/vendor/angular.js
+//= require_tree ./angular/vendor/
+//= require ./angular/modules/myapp.js
+//= require_tree ./angular/

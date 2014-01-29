@@ -8,7 +8,6 @@ group :default do
   gem 'rails', '4.1.0.beta1'
   gem 'spring', '~> 1.0.0'
   gem 'minitest' # temporarilly shut minitest the fuck up about requires
-  gem 'guard-rspec'
 
   
   # Assets
@@ -45,6 +44,8 @@ group :test, :development do
   gem 'database_cleaner', '~> 1.2.0'
   gem 'rspec', '~> 2.14.1'
   gem 'rspec-rails', '~> 2.14.0'
+  gem 'guard-rspec'
+  gem 'guard-jasmine'
   gem 'jasmine-rails'
 end
 
