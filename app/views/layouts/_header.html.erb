@@ -13,21 +13,36 @@
 
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="/home">Home</a></li>
-          <li><a href="/portfolio">Portfolio</a></li>
+      <% if @active_page == 'portfolio' %>
+          <li><a href="/home">Home</a></li>
+          <li class="active"><a href="/portfolio">Portfolio</a></li>
           <li><a href="/blog">Blog</a></li>
-        </ul>
-        <!-- <ul class="nav navbar&#45;nav navbar&#45;right"> -->
-        <!--   <li> -->
-        <!--     <% if @search %> -->
-        <!--       <%= simple_form_for @search, html: { class: 'form&#45;inline' } do |f| %> -->
-        <!--         <%= f.input :query, input_html: {class: 'form&#45;control'}, label_html: { class: 'sr&#45;only' } %> -->
-        <!--         <%= f.button :submit, "Search" %> -->
-        <!--       <% end %> -->
-        <!--     <% end %> -->
-        <!--   </li> -->
+      <% elsif @active_page == 'blog' %>
+          <li><a href="/home">Home</a></li>
+          <li><a href="/portfolio">Portfolio</a></li>
+          <li class="active"><a href="/blog">Blog</a></li>
+      <% else %>
 
-        <!-- </ul> -->
+          <li class="active"><a href="/home">Home</a></li>
+          <li class="dropdown" ng-controller="DropdownCtrl">
+            <a class="dropdown-toggle">
+              Portfolio<span class="caret"></span>
+            </a>
+
+            <ul class="dropdown-menu">
+              <li ng-repeat="dropdownItem in internalDrop">
+                <a href="{{dropdownItem.href}}">{{dropdownItem.name}}</a>
+              </li>
+              <li role="presentation" class="divider"></li>
+              <li ng-repeat="dropdownItem in externalDrop">
+                <a href="{{dropdownItem.href}}">{{dropdownItem.name}}</a>
+              </li>
+            </ul>
+          </li>
+
+          <li><a href="/blog">Blog</a></li>
+      <% end %>
+      </ul>
       </div>
     </div>
   </nav>

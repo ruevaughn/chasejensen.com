@@ -1,4 +1,5 @@
 class Api::ArticlesController < Api::ApplicationController
+  skip_before_action :verify_authenticity_token
   def index
     render json: { success: 200 }
   end
@@ -11,7 +12,7 @@ class Api::ArticlesController < Api::ApplicationController
     tagParams = params.permit(tags: [])
 
     article = Article.new(articleParams)
-    article.tag_list.add(tagParams[:tags])
+    article.add_tags(tagParams[:tags])
 
     if article.save
       render json: { id: article.id }

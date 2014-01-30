@@ -1,14 +1,20 @@
 <h1>Chase Jensen's Blog</h1>
+<div class="row">
+  <div class="col-md-11">
+    <% @articles.each do |article| %>
+      <h1><%= link_to article.title, article %></h1>
+      <%= article.created_at.strftime("%B %d, %Y") %>
+      <article>
+        <%= pre_article(article.body) %>
+        <%= link_to 'See More', article %>
+     </article>
+      <% article.tags.each do |tag| %>
+        <button type='button' class='btn btn-default btn-xs'> <%= tag.name %> </button>
+      <% end %>
+    <% end %>
+  </div>
 
-<% @articles.each do |article| %>
-  <h1><%= link_to article.title, article %></h1>
-  <%= article.created_at %>
-  <article><%= article.body %> </article>
-  <p>Tags:
-  <% article.tags.each do |tag| %>
-    <%= tag.name %>
-  <% end %>
-  </p>
-<% end %>
-
+<div class='col-md-1 well'>
+  <%= render 'layouts/blog_sidebar' %>
+</div>
 

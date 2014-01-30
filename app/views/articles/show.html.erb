@@ -1,7 +1,12 @@
-<h1> <%= @article.title %> </h1>
-Body: <%= markdown @article.body %>
-<p>
-<% @article.tags.each do |tag| %>
-  <%= button_tag tag, class: 'label label-warning' %>
-<% end %>
-
+<div class='row'>
+  <div class='col-md-11'>
+    <h1> <%= @article.title %> </h1>
+    <% @article.tags.each do |tag| %>
+      <button type='button' class='btn btn-default btn-xs'> <%= tag.name %></button>
+    <% end %>
+    <%= markdown @article.body %>
+  </div>
+  <div class='col-md-1'>
+    <%= render 'layouts/blog_sidebar' %>
+</div>
+</div>
