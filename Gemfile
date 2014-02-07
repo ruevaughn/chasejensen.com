@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 group :default do
   # gem 'acts-as-taggable-on', '~> 3.0.0'
   gem 'bcrypt-ruby', '~> 3.1.2'
+  gem 'capistrano', '~> 3.1.0'
   gem 'friendly_id', github: 'norman/friendly_id', branch: 'master'
   gem 'pg', '~> 0.17.1'
   gem 'rails', '4.1.0.beta1'
