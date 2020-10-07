@@ -18,7 +18,7 @@ group :default do
   gem 'bootstrap-sass', '~> 3.0.3.0'
   gem 'coderay', '~> 1.1.0' 
   gem 'coffee-rails', '~> 4.0.0'
-  gem 'jquery-rails', '~> 3.0.4'
+  gem 'jquery-rails', '~> 3.1.5'
   # gem 'jasmine', '2.0.0' # I monkey patch by replacing line 6 in lib/jasmine/railtie.rb with initializer "jasmine.initializer", :before => :load_environment_hook do so generator would work
   gem 'redcarpet', '~> 3.0.0'
   gem 'sass-rails', '~> 4.0.0.rc1'
