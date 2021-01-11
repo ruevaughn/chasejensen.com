@@ -174,7 +174,7 @@ GEM
     rb-fsevent (0.9.4)
     rb-inotify (0.9.3)
       ffi (>= 0.5.0)
-    redcarpet (3.0.0)
+    redcarpet (3.5.1)
     rspec (2.14.1)
       rspec-core (~> 2.14.0)
       rspec-expectations (~> 2.14.0)
@@ -270,7 +270,7 @@ DEPENDENCIES
   pry-debugger
   pry-rails (~> 0.3.2)
   rails (= 4.1.0.beta1)
-  redcarpet (~> 3.0.0)
+  redcarpet (~> 3.5.1)
   rspec (~> 2.14.1)
   rspec-rails (~> 2.14.0)
   sass-rails (~> 4.0.0.rc1)
