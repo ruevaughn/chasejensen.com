@@ -1,9 +1,9 @@
 GIT
-  remote: git://github.com/norman/friendly_id.git
-  revision: b7d2b0c0d2095e6091e1fae0ea2bd032a7406ea1
+  remote: https://github.com/norman/friendly_id.git
+  revision: bd3aab45de0d9bf0725e18e24496d26a4051f060
   branch: master
   specs:
-    friendly_id (5.0.2)
+    friendly_id (6.0.0)
       activerecord (>= 4.0.0)
 
 GEM
@@ -132,14 +132,15 @@ GEM
       treetop (~> 1.4.8)
     method_source (0.8.2)
     mime-types (1.25.1)
-    mini_portile (0.5.2)
+    mini_portile2 (2.8.0)
     minitest (5.2.1)
     multi_json (1.8.2)
     net-scp (1.1.2)
       net-ssh (>= 2.6.5)
     net-ssh (2.8.0)
-    nokogiri (1.6.1)
-      mini_portile (~> 0.5.0)
+    nokogiri (1.13.9)
+      mini_portile2 (~> 2.8.0)
+      racc (~> 1.4)
     pg (0.17.1)
     phantomjs (1.9.2.1)
     polyglot (0.3.3)
@@ -152,6 +153,7 @@ GEM
       pry (~> 0.9.10)
     pry-rails (0.3.2)
       pry (>= 0.9.10)
+    racc (1.6.0)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
